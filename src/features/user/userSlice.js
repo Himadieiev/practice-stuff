@@ -60,6 +60,7 @@ const userSlice = createSlice({
     isLoading: false,
     formType: "signup",
     showForm: false,
+    favorites: [],
   },
   reducers: {
     addItemToCart: (state, { payload }) => {
@@ -85,6 +86,19 @@ const userSlice = createSlice({
     toggleFormType: (state, { payload }) => {
       state.formType = payload;
     },
+    addItemToFavorites: (state, { payload }) => {
+      let newFavorites = [...state.favorites];
+      const found = state.favorites.find(({ id }) => id === payload.id);
+
+      if (found) {
+        return;
+      } else newFavorites.push({ ...payload });
+
+      state.favorites = newFavorites;
+    },
+    removeItemFromFavorites: (state, { payload }) => {
+      state.favorites = state.favorites.filter(({ id }) => id !== payload);
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(createUser.fulfilled, addCurrentUser);
@@ -93,7 +107,13 @@ const userSlice = createSlice({
   },
 });
 
-export const { addItemToCart, removeItemFromCart, toggleForm, toggleFormType } =
-  userSlice.actions;
+export const {
+  addItemToCart,
+  removeItemFromCart,
+  toggleForm,
+  toggleFormType,
+  addItemToFavorites,
+  removeItemFromFavorites,
+} = userSlice.actions;
 
 export default userSlice.reducer;

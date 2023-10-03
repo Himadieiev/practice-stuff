@@ -20,7 +20,7 @@ const Footer = () => {
           target="_blank"
           rel="noreferrer"
         >
-          Himadieiev
+          Himadieiev Ruslan
         </a>
       </div>
       <div className={styles.socials}>

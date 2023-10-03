@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import styles from "../../styles/Profile.module.css";
 import { updateUser } from "../../features/user/userSlice";
+import { ROUTES } from "../../utils/routes";
 
 const Profile = () => {
+  const navigate = useNavigate();
+
   const [values, setValues] = useState({
     name: "",
     email: "",
@@ -33,6 +37,7 @@ const Profile = () => {
     if (!isNotEmpty) return;
 
     dispath(updateUser(values));
+    navigate(ROUTES.HOME);
   };
 
   return (

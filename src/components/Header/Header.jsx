@@ -10,7 +10,7 @@ import { toggleForm } from "../../features/user/userSlice";
 import { useGetProductsQuery } from "../../features/api/apiSlice";
 
 const Header = () => {
-  const { currentUser, cart } = useSelector(({ user }) => user);
+  const { currentUser, cart, favorites } = useSelector(({ user }) => user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -94,8 +94,14 @@ const Header = () => {
           )}
         </form>
         <div className={styles.account}>
-          <Link to={ROUTES.HOME} className={styles.favourites}>
-            <svg className={styles["icon-fav"]}>
+          <Link to={ROUTES.FAVORITES} className={styles.favourites}>
+            <svg
+              className={
+                !favorites.length
+                  ? styles["icon-fav"]
+                  : styles["icon-fav-length"]
+              }
+            >
               <use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#heart`} />
             </svg>
           </Link>

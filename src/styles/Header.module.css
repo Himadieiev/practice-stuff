@@ -83,6 +83,7 @@
 }
 
 .favourites {
+  position: relative;
   cursor: pointer;
 }
 
@@ -94,6 +95,11 @@
 .icon-fav {
   stroke: var(--grey);
   fill: none;
+}
+
+.icon-fav-length {
+  stroke: var(--grey);
+  fill: var(--violet);
 }
 
 .icon-cart {

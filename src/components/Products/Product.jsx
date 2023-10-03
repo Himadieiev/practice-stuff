@@ -4,9 +4,12 @@ import { useDispatch } from "react-redux";
 
 import styles from "../../styles/Product.module.css";
 import { ROUTES } from "../../utils/routes";
-import { addItemToCart } from "../../features/user/userSlice";
+import {
+  addItemToCart,
+  addItemToFavorites,
+} from "../../features/user/userSlice";
 
-const SIZES = [4, 4.5, 5];
+const SIZES = ["S", "M", "L"];
 
 const Product = (item) => {
   const { title, images, price, description } = item;
@@ -24,6 +27,10 @@ const Product = (item) => {
 
   const addToCart = () => {
     dispatch(addItemToCart(item));
+  };
+
+  const addToFavorites = () => {
+    dispatch(addItemToFavorites(item));
   };
 
   return (
@@ -79,7 +86,13 @@ const Product = (item) => {
           >
             Add to cart
           </button>
-          <button className={styles.favorite}>Add to favorites</button>
+          <button
+            className={styles.favorite}
+            onClick={addToFavorites}
+            disabled={!currentSize}
+          >
+            Add to favorites
+          </button>
         </div>
         <div className={styles.bottom}>
           <div className={styles.purchase}>19 people purchased</div>
