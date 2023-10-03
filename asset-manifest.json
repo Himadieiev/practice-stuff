@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/practice-stuff/static/css/main.b7b68797.css",
-    "main.js": "/practice-stuff/static/js/main.129e05b9.js",
+    "main.css": "/practice-stuff/static/css/main.e78b8908.css",
+    "main.js": "/practice-stuff/static/js/main.c359cdbd.js",
     "static/media/computer.png": "/practice-stuff/static/media/computer.5e56530d0ea3793fd73d.png",
     "static/media/banner.png": "/practice-stuff/static/media/banner.60b57e7c22678c62bf30.png",
     "static/media/devices.png": "/practice-stuff/static/media/devices.a0974f63230d0b90cbec.png",
@@ -9,11 +9,11 @@
     "static/media/logo.svg": "/practice-stuff/static/media/logo.fb6afde46b43989ab58d298634d1c757.svg",
     "static/media/avatar.jpg": "/practice-stuff/static/media/avatar.af6f37f182eae3cdc3fb.jpg",
     "index.html": "/practice-stuff/index.html",
-    "main.b7b68797.css.map": "/practice-stuff/static/css/main.b7b68797.css.map",
-    "main.129e05b9.js.map": "/practice-stuff/static/js/main.129e05b9.js.map"
+    "main.e78b8908.css.map": "/practice-stuff/static/css/main.e78b8908.css.map",
+    "main.c359cdbd.js.map": "/practice-stuff/static/js/main.c359cdbd.js.map"
   },
   "entrypoints": [
-    "static/css/main.b7b68797.css",
-    "static/js/main.129e05b9.js"
+    "static/css/main.e78b8908.css",
+    "static/js/main.c359cdbd.js"
   ]
 }
